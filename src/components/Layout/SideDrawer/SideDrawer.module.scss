@@ -1,0 +1,48 @@
+.SideDrawer {
+  background-color: #fff;
+  width: 280px;
+  max-width: 70%;
+  height: 100vh;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  position: fixed;
+  padding: 20px 0;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-out;
+  color: #626567;
+
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__navHeader {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-transform: uppercase;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 22px;
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+}
+
+.SideDrawerOpen {
+  transform: translateX(0);
+}
+
+.SideDrawerHide {
+  transform: translateX(-100%);
+}
+
+@media screen and (min-width: "769px") {
+  .SideDrawer {
+    display: none;
+  }
+}
