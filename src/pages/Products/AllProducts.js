@@ -54,9 +54,11 @@ const AllProducts = () => {
           <PageLoader />
         ) : (
           <div style={{ width: "100%" }}>
-            <button className={styles.AllProducts__newProduct}>
-              New Product
-            </button>
+            {role === "seller" && (
+              <button className={styles.AllProducts__newProduct}>
+                New Product
+              </button>
+            )}
             <div className={styles.AllProducts__cards}>{cards}</div>
           </div>
         )}
