@@ -1,0 +1,33 @@
+.AllProducts {
+  padding: 5rem 0 5rem 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 6rem;
+
+    & > * {
+      margin-right: 20px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: "770px") {
+  .AllProducts {
+    padding: 5rem 0 5rem 0;
+
+    &__cards {
+      justify-content: space-around;
+
+      & > * {
+        margin-right: 0.3rem;
+        margin-left: 0.3rem;
+      }
+    }
+  }
+}
