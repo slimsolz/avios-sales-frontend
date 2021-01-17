@@ -1,0 +1,66 @@
+.SideNavItem {
+  height: 45px;
+  padding-left: 22px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.1px;
+  font-family: SFProDisplay;
+  text-decoration: none;
+  list-style: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+
+  & > a {
+    text-decoration: none;
+  }
+
+  &__link {
+    margin-left: 20px;
+  }
+
+  &__avatarIcon {
+    border-radius: 7px;
+  }
+
+  &__iconList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.SideItemActive {
+  fill: #626567;
+  color: #626567;
+}
+
+.SideItemInActive {
+  fill: #626567;
+  color: #626567;
+}
+
+@media screen and (max-width: "1024px") {
+  .SideNavItem {
+    padding-left: 12px;
+
+    &__link {
+      margin-left: 10px;
+    }
+  }
+}
+
+@media screen and (min-width: "360px") {
+  .SideNavItem {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1.6rem;
+  }
+}
