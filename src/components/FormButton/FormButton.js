@@ -9,7 +9,6 @@ const FormButton = ({
   textColor,
   loaderColor,
   loaderType,
-  type,
 }) => {
   return (
     <button

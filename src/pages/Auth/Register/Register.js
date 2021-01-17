@@ -1,15 +1,15 @@
 import React from "react";
 import Layout from "../../../components/Layout/Layout";
-import LoginForm from "./LoginForm/LoginForm";
+import RegisterForm from "./RegisterForm/RegisterForm";
 
-const Login = () => {
+const Register = () => {
   return (
     <Layout>
       <div>
-        <LoginForm />
+        <RegisterForm />
       </div>
     </Layout>
   );
 };
 
-export default Login;
+export default Register;
