@@ -1,0 +1,31 @@
+.SocialAccounts {
+  display: flex;
+
+  &__item {
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eee;
+
+    &:hover {
+      color: red;
+    }
+  }
+
+  & > *:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: "465px") {
+  .SocialAccounts {
+    &__item {
+      width: 10px;
+      height: 10px;
+    }
+  }
+}

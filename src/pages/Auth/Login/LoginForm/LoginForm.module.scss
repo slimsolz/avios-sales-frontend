@@ -1,0 +1,65 @@
+.LoginForm {
+  max-width: 400px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 6rem;
+  background-color: #fff;
+  padding: 3rem;
+  border-radius: 3px;
+
+  &__iconDiv {
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+
+    & h1 {
+      text-transform: capitalize;
+      font-size: 4rem;
+      margin-left: 5px;
+    }
+  }
+
+  &__message {
+    margin-top: 3rem;
+    background-color: rgb(139, 211, 67);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    color: rgb(20, 14, 14);
+    font-weight: 600;
+  }
+
+  &__btn {
+    margin-top: 3rem;
+  }
+
+  &__checkBtn {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__checkBtnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & label {
+      font-weight: normal;
+      font-size: 2rem;
+      margin-left: 1rem;
+    }
+  }
+
+  &__link {
+    margin-top: 3rem;
+    font-size: 1.5rem;
+
+    & > a {
+      color: red;
+    }
+  }
+}

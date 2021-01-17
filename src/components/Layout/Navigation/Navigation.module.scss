@@ -1,0 +1,43 @@
+.Nav {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+
+  & > * {
+    cursor: pointer;
+    padding: 0 2rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+  }
+
+  &__navItem {
+    margin-right: 10px;
+
+    & > * {
+      color: #626567;
+      text-decoration: none;
+    }
+  }
+}
+
+.active {
+  & > a {
+    color: #626567;
+    font-weight: 900;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: "768px") {
+  .Nav {
+    &__link {
+      display: none;
+    }
+
+    &__navItem {
+      margin-right: 5px;
+    }
+  }
+}
