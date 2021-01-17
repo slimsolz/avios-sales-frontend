@@ -8,3 +8,7 @@ export const getAllProducts = async () => {
   return data;
 };
 
+export const getAllSellerProducts = async (key, id) => {
+  const { data } = await Api.get(`/products/user/${id}`);
+  return data;
+};

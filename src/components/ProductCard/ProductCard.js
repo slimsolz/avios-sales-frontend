@@ -13,6 +13,7 @@ const ProductCard = ({
   price,
   quantity,
   size,
+  role,
 }) => {
   const isLoading = false;
   const imgSrc = image[0].url;
@@ -35,7 +36,8 @@ const ProductCard = ({
         <h3 className={styles.title}>Quantity: {quantity}</h3>
         <h3 className={styles.title}>Date added: {created}</h3>
         <h3 className={styles.title}>Description: {desc}</h3>
-
+      </div>
+      {role !== "seller" && (
         <button
           className={styles.ProductCard__addToCartBtn}
           disabled={isLoading}
@@ -46,7 +48,7 @@ const ProductCard = ({
             "add to cart"
           )}
         </button>
-      </div>
+      )}
     </div>
   );
 };

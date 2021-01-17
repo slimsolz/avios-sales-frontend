@@ -3,21 +3,22 @@ import { useQuery } from "react-query";
 import Layout from "../../components/Layout/Layout";
 import PageLoader from "../../components/PageLoader/PageLoader";
 import ProductCard from "../../components/ProductCard/ProductCard";
+import Auth from "../../utils/Auth";
 import styles from "./AllProducts.module.scss";
-import { getAllProducts } from "./services";
+import { getAllProducts, getAllSellerProducts } from "./services";
 
 const AllProducts = () => {
   let cards;
+  const { role, id } = Auth.getRole();
+
   const { isLoading, data, isError, error } = useQuery(
-    "products",
-    getAllProducts
+    role === "seller" ? ["products", parseInt(id)] : "products",
+    role === "seller" ? getAllSellerProducts : getAllProducts
   );
 
   useEffect(() => {
     if (isError) console.log(error);
   }, [isError, error]);
-
-  // console.log(data);
 
   if (!isLoading && !isError) {
     cards = data.map((product) => {
@@ -40,6 +41,7 @@ const AllProducts = () => {
           price={price}
           quantity={quantity}
           size={size}
+          role={role}
         />
       );
     });
@@ -51,7 +53,12 @@ const AllProducts = () => {
         {isLoading ? (
           <PageLoader />
         ) : (
-          <div className={styles.AllProducts__cards}>{cards}</div>
+          <div style={{ width: "100%" }}>
+            <button className={styles.AllProducts__newProduct}>
+              New Product
+            </button>
+            <div className={styles.AllProducts__cards}>{cards}</div>
+          </div>
         )}
       </div>
     </Layout>
