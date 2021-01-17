@@ -28,6 +28,6 @@ export default class Auth {
       const { role, id } = JwtDecode(token.slice(7));
       return { role, id };
     }
-    return null;
+    return { role: "buyer", id: 0 };
   }
 }
