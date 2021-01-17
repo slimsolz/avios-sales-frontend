@@ -12,7 +12,7 @@ const Layout = ({ setBgColor = null, children }) => {
     <div className={styles.Layout}>
       <Header onOpen={toggle} />
       <SideDrawer show={show} onClose={toggle} />
-      {children}
+      <div className={styles.Layout__main}>{children}</div>
       <Footer />
     </div>
   );

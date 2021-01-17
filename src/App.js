@@ -1,24 +1,26 @@
 import { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { QueryClient, QueryClientProvider } from "react-query";
+// import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryConfigProvider } from "react-query";
 import "./App.css";
 
-const Layout = lazy(() => import("./components/Layout/Layout"));
+const Login = lazy(() => import("./pages/Auth/Login/Login"));
 
-const queryClient = new QueryClient();
+// const queryClient = new QueryClient();
+const queryConfig = { queries: { refetchOnWindowFocus: false } }; // This disables background refresh
 
 function App() {
   return (
     <Router>
-      <QueryClientProvider client={queryClient}>
+      <ReactQueryConfigProvider config={queryConfig}>
         <div>
           <Suspense fallback="">
             <Switch>
-              <Route exact path="/" component={Layout} />
+              <Route exact path="/" component={Login} />
             </Switch>
           </Suspense>
         </div>
-      </QueryClientProvider>
+      </ReactQueryConfigProvider>
     </Router>
   );
 }
