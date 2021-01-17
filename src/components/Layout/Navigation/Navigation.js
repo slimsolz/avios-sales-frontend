@@ -37,7 +37,7 @@ const Navigation = () => {
             path.includes("/cart") && styles.active
           }`}
         >
-          <Link to="/cart">
+          <Link to="#">
             <FaShoppingCart /> cart
           </Link>
         </div>
